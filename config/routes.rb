@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  root 'session#home'
+  get 'home'=>'session#home'
+  get 'user'=>'user#show'
   get 'show'=>'session#show'
 
   get 'new'=>'session#new'
+  post 'new'=>'session#new'
+  post 'user/logout'=>'session#destroy'
   post 'create'=>'session#login'
 
   # The priority is based upon order of creation: first created -> highest priority.

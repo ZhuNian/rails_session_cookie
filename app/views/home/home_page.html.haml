@@ -1,0 +1,8 @@
+%h1 This is home page
+- if current_user.present?
+  %h1= "Welcome #{@current_user.email}"
+  = form_for(:data,url:user_logout_url) do |f|
+    =f.submit 'Log out', class: "btn btn-primary"
+- else
+  = form_for(:data,url:new_url) do |f|
+    =f.submit 'Log in', class: "btn btn-primary"
